@@ -1,5 +1,5 @@
-module.exports = [
-    "https://tidal.com/browse/album/40546281",
-    "https://tidal.com/browse/album/96383304",
-    "https://tidal.com/browse/album/3267679"
-]
+const fs = require("fs");
+let list = fs.readFileSync("download-list.txt").toString("utf-8").split("\n");
+list = list.map(item => item.trim()).filter(item => item);
+console.log(list);
+module.exports = list;
